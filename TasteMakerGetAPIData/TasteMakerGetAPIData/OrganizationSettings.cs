@@ -26,5 +26,14 @@ namespace TasteMakerPull
             }
 
         }
+
+        public static string GetToken
+        {
+            get
+            {
+                return ConfigurationSettings.AppSettings.Get("Token");
+            }
+
+        }
     }
 }

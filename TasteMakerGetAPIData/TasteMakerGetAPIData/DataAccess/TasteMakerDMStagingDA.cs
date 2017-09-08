@@ -7,16 +7,35 @@ using System.Threading.Tasks;
 
 namespace TasteMakerPull.DataAccess
 {
-    class TasteMakerDMStagingDA
+   public class TasteMakerDMStagingDA
     {
-        public static void InsertGuestlist(List<GuestList> customers)
-        {
-            //using (var appDC = new PBRDMStagingDataContext())
-            //{
-            //    appDC.PBRShop_Customers.InsertAllOnSubmit(customers.Select(c => c.ToPBRShopCustomer()));
 
-            //    appDC.SubmitChanges();
-            //}
+        public static void InsertListings(List<Listings> listings)
+        {
+            using (var appDC = new DataClasses2DataContext())
+            {
+                appDC.Listings.InsertAllOnSubmit(listings.Select(e => e.ToTasteMakerListing()));
+
+                appDC.SubmitChanges();
+            }
+        }
+        public static void InsertGuestlist(List<GuestList> guestlists)
+        {
+            using (var appDC = new DataClasses2DataContext())
+            {
+                appDC.Guestlists.InsertAllOnSubmit(guestlists.Select(c => c.ToTasteMakerGuestList()));
+
+                appDC.SubmitChanges();
+            }
+        }
+        public static void InsertEventlist(List<Events> events)
+        {
+            using (var appDC = new DataClasses2DataContext())
+            {
+                appDC.Events.InsertAllOnSubmit(events.Select(c => c.ToTasteMakerEvent()));
+
+                appDC.SubmitChanges();
+            }
         }
     }
 }

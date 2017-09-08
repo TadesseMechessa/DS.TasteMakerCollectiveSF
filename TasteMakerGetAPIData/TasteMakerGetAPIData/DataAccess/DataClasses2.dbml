@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TasteMaker" Class="DataClasses2DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=TasteMaker;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True" SettingsObjectName="TasteMakerPull.Properties.Settings" SettingsPropertyName="TasteMakerConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="Universe.Guestlist" Member="Guestlists">
+    <Type Name="Guestlist">
+      <Column Name="GuestlistId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="token" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Buyer_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Buyer_email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Buyer_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Attendee_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Attendee_email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Attendee_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TicketType_price" Type="System.Decimal" DbType="Decimal(9,2)" CanBeNull="true" />
+      <Column Name="TicketType_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TicketType_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Order_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Order_discount_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Order_currency" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Listing_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Listing_title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Event_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Event_start_stamp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Event_end_stamp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Answer_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Answer_value" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Universe.Listing" Member="Listings">
+    <Type Name="Listing">
+      <Column Name="ListingId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="slug" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="category_id" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="price" Type="System.Decimal" DbType="Decimal(9,2)" CanBeNull="true" />
+      <Column Name="capacity" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="has_active_discount_codes" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="rate_type" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="events_headline" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="host_headline" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="base_currency" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="src_currency" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="event_id" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="cost_id" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Universe.Event" Member="Events">
+    <Type Name="Event">
+      <Column Name="EventId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="start_stamp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="end_stamp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tz" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="listing_id" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="start_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="end_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[full]" Member="full" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="read_only" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="has_active_payment_plan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="can_use_sepa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="alternative_payment_methods" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="count_attending" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="host_id" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="capacity_ids" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="rate_ids" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="payment_plan_id" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
